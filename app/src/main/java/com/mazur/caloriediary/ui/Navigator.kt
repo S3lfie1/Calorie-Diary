@@ -1,4 +1,9 @@
 package com.mazur.caloriediary.ui
 
-interface Navigator {
+interface Navigator{
+    fun navigateTo(fragment: BaseFragment, addToBackStack: Boolean = true)
+    fun navigateTo(fragment: BaseFragment, target: BaseFragment)
+    fun navigateBack()
+    fun navigateToMenu()
+    fun navigateBackToMenu()
 }

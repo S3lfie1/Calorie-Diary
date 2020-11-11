@@ -1,11 +1,12 @@
 package com.mazur.caloriediary
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.app.Application
+import com.orhanobut.hawk.Hawk
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : Application() {
+    override fun onCreate() {
+        super.onCreate()
+
+        Hawk.init(this).build()
     }
 }

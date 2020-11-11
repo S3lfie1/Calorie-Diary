@@ -1,4 +1,7 @@
 package com.mazur.caloriediary.ui.home
 
-class HomePresenter {
+import androidx.lifecycle.ViewModel
+
+class HomePresenter : ViewModel() {
+    var view: HomeView? = null
 }

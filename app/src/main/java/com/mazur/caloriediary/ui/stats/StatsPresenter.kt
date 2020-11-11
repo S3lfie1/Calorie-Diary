@@ -1,4 +1,7 @@
 package com.mazur.caloriediary.ui.stats
 
-class StatsPresenter {
+import androidx.lifecycle.ViewModel
+
+class StatsPresenter : ViewModel() {
+    var view: StatsView? = null
 }

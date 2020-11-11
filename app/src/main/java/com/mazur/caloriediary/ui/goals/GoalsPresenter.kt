@@ -1,4 +1,7 @@
 package com.mazur.caloriediary.ui.goals
 
-class GoalsPresenter {
+import androidx.lifecycle.ViewModel
+
+class GoalsPresenter : ViewModel() {
+    var view: GoalsView? = null
 }

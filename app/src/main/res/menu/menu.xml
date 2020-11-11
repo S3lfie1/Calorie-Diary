@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/group_1" android:title="@string/administration" android:visible="false">
+    <item android:id="@+id/group_1" android:title="tytul" android:visible="false">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/navigation_operator"
-                    android:icon="@drawable/ic_settings_black_24dp"
+                    android:id="@+id/navigation_first"
+                    android:icon="@drawable/ic_home_black_24dp"
                     android:visible="false"
-                    android:title="@string/operator_panel" />
+                    android:title="tytul" />
                 <item
-                    android:id="@+id/navigation_admin"
-                    android:icon="@drawable/ic_build_black_24dp"
+                    android:id="@+id/navigation_second"
+                    android:icon="@drawable/ic_home_black_24dp"
                     android:visible="false"
-                    android:title="@string/admin_panel" />
+                    android:title="zakladka1" />
             </group>
         </menu>
     </item>
@@ -23,20 +23,20 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/navigation_statistics"
-                    android:icon="@drawable/ic_timeline_black_24dp"
-                    android:title="@string/statistics" />
+                    android:icon="@drawable/ic_home_black_24dp"
+                    android:title="zakladka2" />
                 <item
                     android:id="@+id/navigation_maps"
-                    android:icon="@drawable/ic_map_black_24dp"
-                    android:title="@string/map" />
+                    android:icon="@drawable/ic_home_black_24dp"
+                    android:title="zakladka3" />
                 <item
                     android:id="@+id/navigation_agreements"
-                    android:icon="@drawable/ic_folder_shared_black_24dp"
-                    android:title="@string/agreements" />
+                    android:icon="@drawable/ic_home_black_24dp"
+                    android:title="zakladka4" />
                 <item
                     android:id="@+id/navigation_logout"
-                    android:icon="@drawable/ic_exit_to_app_black_24dp"
-                    android:title="@string/logout" />
+                    android:icon="@drawable/ic_home_black_24dp"
+                    android:title="zakladka5" />
             </group>
         </menu>
     </item>

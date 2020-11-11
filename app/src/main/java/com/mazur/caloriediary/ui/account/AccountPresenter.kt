@@ -1,4 +1,7 @@
 package com.mazur.caloriediary.ui.account
 
-class AccountPresenter {
+import androidx.lifecycle.ViewModel
+
+class AccountPresenter : ViewModel() {
+    var view: AccountView? = null
 }

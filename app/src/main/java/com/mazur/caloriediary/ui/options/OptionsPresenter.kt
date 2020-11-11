@@ -1,4 +1,7 @@
 package com.mazur.caloriediary.ui.options
 
-class OptionsPresenter {
+import androidx.lifecycle.ViewModel
+
+class OptionsPresenter : ViewModel() {
+    var view: OptionsView? = null
 }

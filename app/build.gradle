@@ -44,6 +44,9 @@ dependencies {
     //Bottom menu:
     implementation 'com.etebarian:meow-bottom-navigation:1.0.4'
 
+    //CalendarView:
+    implementation 'com.github.sundeepk:compact-calendar-view:3.0.0'
 
-
+    //Circular progressbar:
+    implementation 'com.github.bmarrdev:android-DecoView-charting:v0.9.3'
 }

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Calorie Diary</string>
+    <string name="health_status">Status zdrowia</string>
+    <string name="breakfast">Śniadanie</string>
+    <string name="second_breakfast">Drugie śniadanie</string>
+    <string name="midday_meal">Obiad</string>
+    <string name="afternoon_snack">Podwieczorek</string>
+    <string name="supper">Kolacja</string>
+    <string name="select_dinner">Wybierz danie</string>
+    <string name="dessert">Deser</string>
+    <string name="provide_meal">Wprowadź swój </string>
+    <string name="kcal">Ilość kcal</string>
+    <string name="meal_name">Nazwa posiłku</string>
+    <string name="save">Zapisz</string>
 </resources>

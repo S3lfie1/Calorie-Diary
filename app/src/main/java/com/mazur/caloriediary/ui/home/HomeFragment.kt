@@ -15,6 +15,7 @@ import com.mazur.caloriediary.ui.BaseFragment
 import com.orhanobut.hawk.Hawk
 import kotlinx.android.synthetic.main.activity_wrapper.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
+import kotlinx.android.synthetic.main.item_drawer_header.view.*
 
 class HomeFragment : BaseFragment(), HomeView {
     private lateinit var presenter: HomePresenter
@@ -51,13 +52,18 @@ class HomeFragment : BaseFragment(), HomeView {
         menuBtn.setOnClickListener {
             if (!drawer.isDrawerOpen(GravityCompat.START)) {
                 drawer.openDrawer(GravityCompat.START)
-//                drawer.nav_head_appname.text = "email"
+                drawer.nav_head_appname.text = "email"
             } else {
                 drawer.closeDrawer(GravityCompat.END)
             }
         }
 
+        this.setProgressBar(view)
         return view
+    }
+
+    override fun setProgressBar(view: View) {
+        presenter.initProgressBar(view)
     }
 
 //    override fun logout() {

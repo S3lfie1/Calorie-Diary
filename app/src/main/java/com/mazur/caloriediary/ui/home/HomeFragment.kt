@@ -24,7 +24,6 @@ import kotlinx.android.synthetic.main.activity_wrapper.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.item_drawer_header.view.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 class HomeFragment : BaseFragment(), HomeView {
     private lateinit var presenter: HomePresenter
@@ -50,7 +49,14 @@ class HomeFragment : BaseFragment(), HomeView {
 
         compactCalendarView.setListener(object : CompactCalendarViewListener {
             override fun onDayClick(dateClicked: Date) {
+                var caloriesSum = 0
+                events?.forEach {
+                    if (isSameDay(dateClicked, it.date))
+                        caloriesSum += it.calories.toInt()
+                }
 
+                presenter.dateCalories = caloriesSum
+                presenter.initProgressBar(view)
             }
 
             override fun onMonthScroll(firstDayOfNewMonth: Date) {
@@ -89,6 +95,14 @@ class HomeFragment : BaseFragment(), HomeView {
 
     override fun setProgressBar(view: View) {
         presenter.initProgressBar(view)
+    }
+
+    fun isSameDay(date1: Date?, date2: Date?): Boolean {
+        val calendar1 = Calendar.getInstance()
+        calendar1.time = date1
+        val calendar2 = Calendar.getInstance()
+        calendar2.time = date2
+        return calendar1[Calendar.YEAR] === calendar2[Calendar.YEAR] && calendar1[Calendar.MONTH] === calendar2[Calendar.MONTH] && calendar1[Calendar.DAY_OF_MONTH] === calendar2[Calendar.DAY_OF_MONTH]
     }
 
 //    override fun logout() {

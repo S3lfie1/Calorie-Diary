@@ -58,8 +58,8 @@ class WrapperActivity : AppCompatActivity(), Navigator {
         bottomNavigation.add(MeowBottomNavigation.Model(MENU_MEALS, R.drawable.ic_baseline_restaurant_24))
         bottomNavigation.add(MeowBottomNavigation.Model(MENU_GOALS, R.drawable.ic_baseline_collections_bookmark_24))
         bottomNavigation.add(MeowBottomNavigation.Model(MENU_STATS, R.drawable.ic_baseline_timeline_24))
-        bottomNavigation.add(MeowBottomNavigation.Model(MENU_ACCOUNT, R.drawable.ic_baseline_account_circle_24))
-        bottomNavigation.add(MeowBottomNavigation.Model(MENU_OPTIONS, R.drawable.ic_baseline_settings_24))
+//        bottomNavigation.add(MeowBottomNavigation.Model(MENU_ACCOUNT, R.drawable.ic_baseline_account_circle_24))
+//        bottomNavigation.add(MeowBottomNavigation.Model(MENU_OPTIONS, R.drawable.ic_baseline_settings_24))
         bottomNavigation.show(MENU_HOME)
         bottomNavigation.setOnClickMenuListener {
             when (it.id) {

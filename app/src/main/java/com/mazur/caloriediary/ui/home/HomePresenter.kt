@@ -17,6 +17,8 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomePresenter : ViewModel() {
     var view: HomeView? = null
+    var minCalories = 2000
+    var dateCalories = -1
 
     fun initProgressBar(view: View) {
         var value = 0f
@@ -29,13 +31,14 @@ class HomePresenter : ViewModel() {
                     calories+= it.calories
             }
 
-            var minCalories = 2000
             val options: ArrayList<Option>? = Hawk.get(Preferences.USER_OPTIONS)
             val singleOption = options?.find { it.code == 1 }
             if (singleOption != null) {
                 minCalories = singleOption.intValue!!
             }
-            value = (calories.toFloat() / minCalories) * 100
+
+            calories = if (dateCalories >= 0) dateCalories.toDouble() else calories
+            value = (calories.toFloat() / (minCalories)) * 100
         }
 
         decoView.addSeries(

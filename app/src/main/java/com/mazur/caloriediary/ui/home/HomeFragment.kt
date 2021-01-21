@@ -1,6 +1,8 @@
 package com.mazur.caloriediary.ui.home
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,13 +11,20 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProviders
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
+import com.github.sundeepk.compactcalendarview.CompactCalendarView
+import com.github.sundeepk.compactcalendarview.CompactCalendarView.CompactCalendarViewListener
+import com.github.sundeepk.compactcalendarview.domain.Event
 import com.google.android.material.navigation.NavigationView
 import com.mazur.caloriediary.R
+import com.mazur.caloriediary.helpers.Preferences
+import com.mazur.caloriediary.model.Meal
 import com.mazur.caloriediary.ui.BaseFragment
 import com.orhanobut.hawk.Hawk
 import kotlinx.android.synthetic.main.activity_wrapper.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.item_drawer_header.view.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class HomeFragment : BaseFragment(), HomeView {
     private lateinit var presenter: HomePresenter
@@ -31,6 +40,22 @@ class HomeFragment : BaseFragment(), HomeView {
 
         val navView: NavigationView = activity!!.nav_view
         val drawer: DrawerLayout = activity!!.drawer
+
+        val compactCalendarView = view.compactcalendar_view as CompactCalendarView
+
+        val events : ArrayList<Meal>? = Hawk.get(Preferences.USER_MEALS)
+        events?.forEach {
+            compactCalendarView.addEvent(Event(Color.GREEN, it.date.time))
+        }
+
+        compactCalendarView.setListener(object : CompactCalendarViewListener {
+            override fun onDayClick(dateClicked: Date) {
+
+            }
+
+            override fun onMonthScroll(firstDayOfNewMonth: Date) {
+            }
+        })
 
         navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener {
             when (it.itemId) {

@@ -61,6 +61,7 @@ class MealFormFragment : BaseFragment(), MealsFormView {
 
     override fun saveMeal(meal: ArrayList<Meal>) {
         Hawk.put(Preferences.USER_MEALS, meal)
+        navigator?.navigateBack()
     }
 
     override fun getMeal() {

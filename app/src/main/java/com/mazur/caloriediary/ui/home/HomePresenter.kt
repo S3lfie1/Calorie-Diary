@@ -11,6 +11,7 @@ import com.hookedonplay.decoviewlib.events.DecoEvent
 import com.mazur.caloriediary.R
 import com.mazur.caloriediary.helpers.Preferences
 import com.mazur.caloriediary.model.Meal
+import com.mazur.caloriediary.model.Option
 import com.orhanobut.hawk.Hawk
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
@@ -28,7 +29,13 @@ class HomePresenter : ViewModel() {
                     calories+= it.calories
             }
 
-            value = (calories.toFloat() / 2000) * 100
+            var minCalories = 2000
+            val options: ArrayList<Option>? = Hawk.get(Preferences.USER_OPTIONS)
+            val singleOption = options?.find { it.code == 1 }
+            if (singleOption != null) {
+                minCalories = singleOption.intValue!!
+            }
+            value = (calories.toFloat() / minCalories) * 100
         }
 
         decoView.addSeries(
